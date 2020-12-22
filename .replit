@@ -1,1 +1,2 @@
 language = "java10"
+run = "javac -d bin src/UberSimulation/*.java; java -cp bin UberSimulation.UberMain"
