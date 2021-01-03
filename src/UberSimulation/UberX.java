@@ -10,7 +10,7 @@ public class UberX extends Car {
   private int distance;
 
   /** 
-  * UberX constructor. Creates an instance of the object, uberblacksuv. 
+  * UberX constructor. Creates an instance of the object, uberx. 
   *
   * @param brand - string of car's brand called from the super constructor. 
   * @param model - string of car's model called from the super constructor. 

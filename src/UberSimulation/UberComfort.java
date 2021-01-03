@@ -11,7 +11,7 @@ public class UberComfort extends Car {
   private int distance;
 
   /** 
-  * UberComfort constructor. Creates an instance of the object, uberblacksuv. 
+  * UberComfort constructor. Creates an instance of the object, ubercomfort. 
   *
   * @param brand - string of car's brand called from the super constructor. 
   * @param model - string of car's model called from the super constructor. 
