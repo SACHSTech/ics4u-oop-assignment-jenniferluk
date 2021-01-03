@@ -44,6 +44,7 @@ public class UberMain {
     String drivername = "";
     String driverrating = ""; 
     String driverphonenum = ""; 
+    String choice; 
     int TripDuration;
     int TripDistance;
     int passenger = 0;
@@ -103,6 +104,9 @@ public class UberMain {
       }
 
     }
+    
+    System.out.println("Searching for a ride...");
+    pause(1000);
 
     if (carChoice.equalsIgnoreCase("UberX")) {
       Car uberx = new UberX(TripDuration, TripDistance);
@@ -111,6 +115,7 @@ public class UberMain {
       driver = new Driver("John");
       drivername = driver.getName();
       driverphonenum = driver.getphoneNum();
+      driverrating = driver.getRating();
     } else if (carChoice.equalsIgnoreCase("UberComfort")) {
       Car ubercomfort = new UberComfort(TripDuration, TripDistance);
       ubercomfort.getBrand(); 
@@ -150,8 +155,20 @@ public class UberMain {
 
     Booking booking = new Booking(username, TripDistance, TripDuration, passenger, carChoice, drivername, driverphonenum, driverrating);
 
+    System.out.println(booking);
+
+    end = true;
+    while (end) {
+      
+      System.out.println("\nTo confirm your booking enter 'Y'\n For more information about your driver enter 'D'\n"); 
+      choice = keyboard.readLine();
+      
+      switch (choice) {
+        case "Y":
+          System.out.print
 
 
+    }
   }
 
 }

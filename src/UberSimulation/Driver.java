@@ -48,6 +48,5 @@ public class Driver{
   public String getRating(){
     return this.rating;
   }
-
  
 }
