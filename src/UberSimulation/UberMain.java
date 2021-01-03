@@ -171,15 +171,17 @@ public class UberMain {
             System.out.print("Thank you for riding with Uber! Your driver will contact you shortly.");
             end1 = false; 
             end2 = false; 
+            break;
           case "D":
             System.out.println(driver);
+            break; 
           case "C":
             end2 = false;
             System.out.println("\nMake changes to your booking");
         }
       }
     }
-    System.out.println("Thank you for riding with Uber. Your driver will contact you shortly.");
+
   }
 
 }
