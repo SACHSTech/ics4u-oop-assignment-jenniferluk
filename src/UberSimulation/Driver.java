@@ -11,6 +11,11 @@ public class Driver{
   private String rating; 
   private String car; 
 
+  /** 
+  * Driver constructor. Creates an instance of the object, Driver. 
+  *
+  * @param name - string of the driver's name
+  */
   public Driver(String name){
     this.name = name;
 
@@ -42,24 +47,51 @@ public class Driver{
       this.car = "Cadillac XTS";
     }
   }
-    
+  
+  /** 
+  * Gettor method that returns the name of the driver. 
+  *
+  * @return this.name - string of the driver's name.
+  */
   public String getName(){
     return this.name;
   }
 
+  /** 
+  * Gettor method that returns the phone number of the driver. 
+  *
+  * @return this.phoneNum - string of the driver's phone number.
+  */
   public String getphoneNum(){
     return this.phoneNum;
   }
 
+  /** 
+  * Gettor method that returns the email of the driver. 
+  *
+  * @return this.email - string of the driver's email.
+  */
   public String getEmail(){
     return this.email;
   }
 
+  /** 
+  * Gettor method that returns the  rating of the driver. 
+  *
+  * @return this.phoneNum - string of the driver's rating.
+  */
   public String getRating(){
     return this.rating;
   }
 
-  // print out driver info 
+  /** 
+  * toString method to print out the driver's information. 
+  *
+  * @return this.name - string of the driver's name.
+  * @return this.email - string of the driver's email.
+  * @return this.phoneNum - string of the driver's phone number
+  * @return this.phoneNum - string of the driver's rating.
+  */ 
   public String toString(){
     return "Driver Name: " + this.name + "\nPhone #: " + this.phoneNum + "\nEmail: " + this.email + "\nRating: " +this.rating + "\nCar: " + this.car;
    
