@@ -10,7 +10,7 @@ public abstract class Car{
   private String driver; 
    
   /** 
-  * Car constructor. Creates an instance of the object, Car. 
+  * Car constructor. Creates an instance of the 5 uber cars. 
   *
   * @param brand - string of the car's brand 
   * @param model - string of the car's model 
