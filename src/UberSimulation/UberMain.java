@@ -48,8 +48,7 @@ public class UberMain {
     int TripDuration;
     int TripDistance;
     int passenger = 0;
-    Driver driver;
-
+    
     displayLogo();
     System.out.println();
     printDivider();
@@ -108,9 +107,10 @@ public class UberMain {
     System.out.println("Searching for a ride...");
     pause(1000);
 
+    Driver driver = new Driver("");
+
     if (carChoice.equalsIgnoreCase("UberX")) {
       Car uberx = new UberX(TripDuration, TripDistance);
-      uberx.getBrand(); 
       uberx.getFare();
       driver = new Driver("John");
       drivername = driver.getName();
@@ -118,7 +118,6 @@ public class UberMain {
       driverrating = driver.getRating();
     } else if (carChoice.equalsIgnoreCase("UberComfort")) {
       Car ubercomfort = new UberComfort(TripDuration, TripDistance);
-      ubercomfort.getBrand(); 
       ubercomfort.getFare();
       driver = new Driver("Sarah");
       drivername = driver.getName();
@@ -126,7 +125,6 @@ public class UberMain {
       driverrating = driver.getRating();
     } else if (carChoice.equalsIgnoreCase("UberXL")) {
       Car uberxl = new UberXL(TripDuration, TripDistance);
-      uberxl.getBrand(); 
       uberxl.getFare();
       driver = new Driver("Amy");
       drivername = driver.getName();
@@ -134,7 +132,6 @@ public class UberMain {
       driverphonenum = driver.getphoneNum();
     } else if (carChoice.equalsIgnoreCase("UberBlack")) {
       Car uberblack = new UberBlack(TripDuration, TripDistance);
-      uberblack.getBrand();
       uberblack.getFare();
       driver = new Driver("Jess");
       drivername = driver.getName();
@@ -142,7 +139,6 @@ public class UberMain {
       driverrating = driver.getRating();
     } else if (carChoice.equalsIgnoreCase("UberBlackSUV")) {
       Car uberblacksuv = new UberBlackSUV(TripDuration, TripDistance);
-      uberblacksuv.getBrand();
       uberblacksuv.getFare();
       driver = new Driver("Alex");
       drivername = driver.getName(); 
@@ -160,17 +156,18 @@ public class UberMain {
     end = true;
     while (end) {
       
-      System.out.println("\nTo confirm your booking enter 'Y'\n For more information about your driver enter 'D'\n"); 
+      System.out.println("\nTo confirm your booking enter 'Y'\nFor more information about your driver enter 'D'"); 
       choice = keyboard.readLine();
       
-      switch (choice) {
+      switch (choice.toUpperCase()) {
         case "Y":
           System.out.print("Thank you for riding with Uber! Your driver will contact you shortly.");
-        case "D"
+          end = false; 
+        case "D":
+          System.out.println(driver);
       }
-
-
     }
+    System.out.println("Thank you for riding with Uber. Your driver will contact you shortly.");
   }
 
 }

@@ -14,35 +14,7 @@ public abstract class Car{
       this.model = model; 
       this.driver = driver; 
   }
-  
-  public void setBrand(String brand){
-      this.brand = brand;
-  }
-  
-  public void setModel(String model){
-      this.model = model;
-  }
-
-  public void setDriver(String driver){
-      this.driver = driver;
-  }
-  
-  public String getBrand(){
-      return this.brand;
-  }
-
-  public String getModel(){
-      return this.model;
-  }
-  
-  public String getDriver(){
-      return this.driver;
-  }
     
-  public String toString(){
-    return "Brand: " + this.brand + "\nModel: " + this.model;
-  }
-
   public static void showInfo() {
     System.out.println("\nFind the right ride\n--------------------\n* UberX (1-3)\nAffordable, everyday rides\nFare Breakdown:\nBase Fare .................... $2.50\n+ Per Minute ................. $0.18\n+ Per Kilometer .............. $0.81");
 
@@ -57,6 +29,5 @@ public abstract class Car{
   }
 
   public abstract double getFare();
-
   
 }

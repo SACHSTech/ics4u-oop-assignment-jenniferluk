@@ -24,8 +24,7 @@ public class Booking {
     this.driverrating = driverrating; 
   }
 
-  public String toString()
-    {
-        return "\nHere is your booking: \nName: " + this.username + "\nRide Duration: " + this.duration + "\nRide Distance: " + this.distance + "\n# of Passengers: " +this.passengernum + "\nCar Choice: " + this.usercarChoice + "\nDriver: " + this.drivername + "\nDriver Phone #: " + this.driverphonenum + "\nDriver Rating: " + this.driverrating;
-    }
+  public String toString() {
+    return "\nHere is your booking: \nName: " + this.username + "\nRide Duration: " + this.duration + "\nRide Distance: " + this.distance + "\n# of Passengers: " +this.passengernum + "\nCar Choice: " + this.usercarChoice + "\nDriver: " + this.drivername + "\nDriver Phone #: " + this.driverphonenum + "\nDriver Rating: " + this.driverrating;
+  }
 }
