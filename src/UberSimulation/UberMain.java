@@ -165,7 +165,9 @@ public class UberMain {
       
       switch (choice) {
         case "Y":
-          System.out.print
+          System.out.print("Thank you for riding with Uber! Your driver will contact you shortly.");
+        case "D"
+      }
 
 
     }
