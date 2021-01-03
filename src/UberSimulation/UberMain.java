@@ -4,48 +4,47 @@ import java.io.*;
 import java.util.*;
 import java.util.Scanner;
 
-
-import UberStimulation.Car;
-import UberStimulation.User;
+import UberStimulation.*;
 
 public class UberMain {
   private static void printDivider() {
-        for(int i = 0; i < 55; i++)
-        {
-            System.out.print("=");
-        }
-        System.out.println();
-
+    for (int i = 0; i < 55; i++) {
+      System.out.print("=");
+    }
+    System.out.println();
   }
+
   public static void displayLogo() {
 
-    System.out.println("\n    ***    ***   *******    ********  ******* \n    ***    ***   ********   ********  ********\n    ***    ***   ***  ***   ***       ***  ****\n    ***    ***   ***  ***   ***       ***  ****\n    ***    ***   ********   ********  *********\n    ***    ***   *******    ********  ********\n    ***    ***   ***  ***   ***       ***  ****\n    ***    ***   ***  ***   ***       ***   ****\n     ********    ********   ********  ***    ****\n      ******     *******    ********  ***    ****"); 
+    System.out.println(
+        "\n    ***    ***   *******    ********  ******* \n    ***    ***   ********   ********  ********\n    ***    ***   ***  ***   ***       ***  ****\n    ***    ***   ***  ***   ***       ***  ****\n    ***    ***   ********   ********  *********\n    ***    ***   *******    ********  ********\n    ***    ***   ***  ***   ***       ***  ****\n    ***    ***   ***  ***   ***       ***   ****\n     ********    ********   ********  ***    ****\n      ******     *******    ********  ***    ****");
 
     pause(1500);
   }
-  
+
   private static void pause(int pauseLength) {
     try {
-        Thread.sleep(pauseLength);
+      Thread.sleep(pauseLength);
     } catch (InterruptedException e) {
-        e.printStackTrace();
+      e.printStackTrace();
     }
   }
 
   public static void main(String args[]) throws IOException {
-    
+
     // Initialize buffered reader
     BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
 
     // Declare variables
-    String username; 
-    String carChoice = ""; 
+    String username;
+    String carChoice = "";
     String userphoneNum;
     String useremail;
     String userpassword;
-    int TripDuration; 
-    int TripDistance; 
-    int passenger = 0; 
+    int TripDuration;
+    int TripDistance;
+    int passenger = 0;
+    Driver driver;
 
     displayLogo();
     System.out.println();
@@ -55,12 +54,14 @@ public class UberMain {
     username = keyboard.readLine();
 
     System.out.print("Last Name: ");
-    username = username + " " +keyboard.readLine();  
-    
+    username = username + " " + keyboard.readLine();
+
     System.out.print("Enter your mobile number (no dashes): ");
-    userphoneNum = keyboard.readLine();;
-    // String number = phoneNum.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3");
-    
+    userphoneNum = keyboard.readLine();
+    ;
+    // String number = phoneNum.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1)
+    // $2-$3");
+
     System.out.print("Enter your email: ");
     useremail = keyboard.readLine();
 
@@ -73,36 +74,65 @@ public class UberMain {
 
     System.out.print("Enter the distance of your trip in km: ");
     TripDistance = Integer.parseInt(keyboard.readLine());
-    
+
     System.out.print("Enter the # of passengers: ");
     passenger = Integer.parseInt(keyboard.readLine());
-    
+
     boolean end = true;
-    while (end) {  
+    while (end) {
       printDivider();
 
-      if (passenger <= 3){
+      if (passenger <= 3) {
         System.out.println("Choose a ride: \n * UberX\n * UberComfort\n * UberXL\n * UberBlack\n * UberBlackSUV");
-      }else if(3 < passenger && passenger <= 5){
-        System.out.println("Choose a ride: \n" + "UberXL\n"+"UberBlackSUV");
-      }else{
+      } else if (3 < passenger && passenger <= 5) {
+        System.out.println("Choose a ride: \n" + "UberXL\n" + "UberBlackSUV");
+      } else {
         System.out.println("You have too many passengers. Please book again with 5 or less passengers.");
         break;
       }
       System.out.println("\nFor more information about each car and its fare price, enter 'I'");
       carChoice = keyboard.readLine();
-      
+
       if (carChoice.equalsIgnoreCase("I")) {
         Car.showInfo();
-        
-      }else{
+      } else {
         end = false;
       }
-        
+
     }
-    User user = new User(username, userphoneNum, useremail, userpassword, TripDistance, TripDuration, passenger, carChoice);
+
+    User user = new User(username, userphoneNum, useremail, userpassword, TripDistance, TripDuration, passenger,
+        carChoice);
 
 
+    if (carChoice.equalsIgnoreCase("UberX")) {
+      Car uberx = new UberX(TripDuration, TripDistance);
+      uberx.getBrand(); 
+      uberx.getFare();
+      driver = new Driver("John");
+    } else if (carChoice.equalsIgnoreCase("UberComfort")) {
+      Car ubercomfort = new UberComfort(TripDuration, TripDistance);
+      ubercomfort.getBrand(); 
+      ubercomfort.getFare();
+      driver = new Driver("Sarah");
+    } else if (carChoice.equalsIgnoreCase("UberXL")) {
+      Car uberxl = new UberXL(TripDuration, TripDistance);
+      uberxl.getBrand(); 
+      uberxl.getFare();
+      driver = new Driver("Amy");
+    } else if (carChoice.equalsIgnoreCase("UberBlack")) {
+      Car uberblack = new UberBlack(TripDuration, TripDistance);
+      uberblack.getBrand();
+      uberblack.getFare();
+      driver = new Driver("Jess");
+    } else if (carChoice.equalsIgnoreCase("UberBlackSUV")) {
+      Car uberblacksuv = new UberBlackSUV(TripDuration, TripDistance);
+      uberblacksuv.getBrand();
+      uberblacksuv.getFare();
+      driver = new Driver("Alex");
+    }
+
+    
 
 
 

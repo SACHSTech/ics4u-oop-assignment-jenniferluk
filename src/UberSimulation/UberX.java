@@ -1,20 +1,25 @@
 package UberStimulation;
 
 import java.util.*;
+import UberSimulation.*;
 
 public class UberX extends Car {
-  String brand;
-  String model;
 
-  public UberX(String username, String userphoneNum, String useremail, String userpassword, int TripDuration, int TripDistance, int passenger, String carChoice){
-    super(username, userphoneNum, useremail, userpassword, TripDuration, TripDistance, passenger, carChoice);
-    this.brand = "Ford";
-    this.model = "Ford";
+  private int duration; 
+  private int distance;
 
+  public UberX(String brand, String model, String driver, int duration, int distance){
+    super(brand, model, driver); 
+    this.duration = duration;
+    this.distance = distance;
   } 
-  // public void printDataCar() {
-  //     super.printDataCar();
-  //     System.out.println("Model: " + model + " Brand : " + brand);
-  //   }
-    
+
+  public UberX(int duration, int distance){
+     this("Audi","A6", "John", duration, distance);
+  }
+
+  public double getFare(){
+    return 2.50 + (duration*0.18) + (distance*0.81);
+  }
+
 }

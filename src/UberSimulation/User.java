@@ -4,24 +4,24 @@ import java.util.*;
 
 public class User{
 
-  private String name; 
-  private String phoneNum; 
-  private String email;
-  private String password; 
-  private int duration; 
-  private int distance; 
-  private int passengernum; 
-  private String ridechoice;
+  public String username; 
+  public String userphoneNum; 
+  public String useremail;
+  public String userpassword; 
+  public int duration; 
+  public int distance; 
+  public int passengernum; 
+  public String usercarChoice;
 
-  public User(String username, String userphoneNum, String useremail, String userpassword, int TripDuration, int TripDistance, int passenger, String carChoice) {
-    this.name = username;
-    this.phoneNum = userphoneNum; 
-    this.email = useremail; 
-    this.password = userpassword; 
-    this.duration = TripDuration; 
-    this.distance = TripDistance; 
-    this.passengernum = passenger;
-    this.ridechoice = carChoice; 
+  public User(String username, String userphoneNum, String useremail, String userpassword, int duration, int distance, int passengernum, String usercarChoice) {
+    this.username = username;
+    this.userphoneNum = userphoneNum; 
+    this.useremail = useremail; 
+    this.userpassword = userpassword; 
+    this.duration = duration; 
+    this.distance = distance; 
+    this.passengernum = passengernum;
+    this.usercarChoice = usercarChoice; 
       
   }
   
