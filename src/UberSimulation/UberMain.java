@@ -48,6 +48,8 @@ public class UberMain {
     int TripDuration;
     int TripDistance;
     int passenger = 0;
+    double fare = 0; 
+    Driver driver = new Driver("");
     
     displayLogo();
     System.out.println();
@@ -95,18 +97,67 @@ public class UberMain {
       while (end2) {
         printDivider();
 
-        if (passenger <= 3) {
-          System.out.println("Choose a ride: \n * UberX\n * UberComfort\n * UberXL\n * UberBlack\n * UberBlackSUV");
-        } else if (3 < passenger && passenger <= 5) {
-          System.out.println("Choose a ride: \n" + "UberXL\n" + "UberBlackSUV");
-        }
-        System.out.println("\nFor more information about each car and its fare price, enter 'I'");
-        carChoice = keyboard.readLine();
+        boolean carmenu = true; 
+        while (carmenu){
+          if (passenger <= 3) {
+            System.out.println("\nChoose a ride: \n * UberX\n * UberComfort\n * UberXL\n * UberBlack\n * UberBlackSUV");
+          } else if (3 < passenger && passenger <= 5) {
+            System.out.println("Choose a ride: \n" + "UberXL\n" + "UberBlackSUV");
+          }
+          System.out.println("\nFor more information about each car and its fare price, enter 'I'");
 
-        if (carChoice.equalsIgnoreCase("I")) {
-          Car.showInfo();
-        } else {
-          end2 = false;
+          carChoice = keyboard.readLine();
+
+          if (carChoice.equalsIgnoreCase("UberX")) {
+            Car uberx = new UberX(TripDuration, TripDistance);
+            fare = uberx.getFare();
+            driver = new Driver("John");
+            drivername = driver.getName();
+            driverphonenum = driver.getphoneNum();
+            driverrating = driver.getRating();
+            end2 = false; 
+            carmenu = false;
+          } else if (carChoice.equalsIgnoreCase("UberComfort")) {
+            Car ubercomfort = new UberComfort(TripDuration, TripDistance);
+            fare = ubercomfort.getFare();
+            driver = new Driver("Sarah");
+            drivername = driver.getName();
+            driverphonenum = driver.getphoneNum();
+            driverrating = driver.getRating();
+            end2 = false;
+            carmenu = false;
+          } else if (carChoice.equalsIgnoreCase("UberXL")) {
+            Car uberxl = new UberXL(TripDuration, TripDistance);
+            fare = uberxl.getFare();
+            driver = new Driver("Amy");
+            drivername = driver.getName();
+            driverrating = driver.getRating();
+            driverphonenum = driver.getphoneNum();
+            end2 = false;
+            carmenu = false;
+          } else if (carChoice.equalsIgnoreCase("UberBlack")) {
+            Car uberblack = new UberBlack(TripDuration, TripDistance);
+            fare = uberblack.getFare();
+            driver = new Driver("Jess");
+            drivername = driver.getName();
+            driverphonenum = driver.getphoneNum();
+            driverrating = driver.getRating();
+            end2 = false;
+            carmenu = false;
+          } else if (carChoice.equalsIgnoreCase("UberBlackSUV")) {
+            Car uberblacksuv = new UberBlackSUV(TripDuration, TripDistance);
+            fare = uberblacksuv.getFare();
+            driver = new Driver("Alex");
+            drivername = driver.getName(); 
+            driverphonenum = driver.getphoneNum();
+            driverrating = driver.getRating();
+            end2 = false;
+            carmenu = false;
+          } else if (carChoice.equalsIgnoreCase("I")) {
+            Car.showInfo();
+          } else {
+            System.out.println("Invalid input. Please try again.");
+          }
         }
 
       }
@@ -114,49 +165,9 @@ public class UberMain {
       System.out.println("Searching for a ride...");
       pause(1000);
 
-      Driver driver = new Driver("");
-
-      if (carChoice.equalsIgnoreCase("UberX")) {
-        Car uberx = new UberX(TripDuration, TripDistance);
-        uberx.getFare();
-        driver = new Driver("John");
-        drivername = driver.getName();
-        driverphonenum = driver.getphoneNum();
-        driverrating = driver.getRating();
-      } else if (carChoice.equalsIgnoreCase("UberComfort")) {
-        Car ubercomfort = new UberComfort(TripDuration, TripDistance);
-        ubercomfort.getFare();
-        driver = new Driver("Sarah");
-        drivername = driver.getName();
-        driverphonenum = driver.getphoneNum();
-        driverrating = driver.getRating();
-      } else if (carChoice.equalsIgnoreCase("UberXL")) {
-        Car uberxl = new UberXL(TripDuration, TripDistance);
-        uberxl.getFare();
-        driver = new Driver("Amy");
-        drivername = driver.getName();
-        driverrating = driver.getRating();
-        driverphonenum = driver.getphoneNum();
-      } else if (carChoice.equalsIgnoreCase("UberBlack")) {
-        Car uberblack = new UberBlack(TripDuration, TripDistance);
-        uberblack.getFare();
-        driver = new Driver("Jess");
-        drivername = driver.getName();
-        driverphonenum = driver.getphoneNum();
-        driverrating = driver.getRating();
-      } else if (carChoice.equalsIgnoreCase("UberBlackSUV")) {
-        Car uberblacksuv = new UberBlackSUV(TripDuration, TripDistance);
-        uberblacksuv.getFare();
-        driver = new Driver("Alex");
-        drivername = driver.getName(); 
-        driverphonenum = driver.getphoneNum();
-        driverrating = driver.getRating();
-      }
-
-
       User user = new User(username, userphoneNum, useremail, userpassword);
 
-      Booking booking = new Booking(username, TripDistance, TripDuration, passenger, carChoice, drivername, driverphonenum, driverrating);
+      Booking booking = new Booking(username, TripDistance, TripDuration, passenger, carChoice, fare, drivername, driverphonenum, driverrating);
 
       System.out.println(booking);
 
