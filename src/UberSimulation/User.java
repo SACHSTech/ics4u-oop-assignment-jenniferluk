@@ -4,6 +4,7 @@ import java.util.*;
 
 public class User{
 
+  // instance variables
   private String username; 
   private String userphoneNum; 
   private String useremail;
@@ -14,9 +15,6 @@ public class User{
     this.username = username;
     this.userphoneNum = userphoneNum; 
     this.useremail = useremail; 
-    this.userpassword = userpassword; 
-   
-      
+    this.userpassword = userpassword;      
   }
-  
 }

@@ -3,9 +3,10 @@ package UberStimulation;
 import java.util.*;
 import UberSimulation.*;
 
-
+// subclass of Car class
 public class UberBlackSUV extends Car {
 
+  // instance variables
   private int duration; 
   private int distance;
 
@@ -19,6 +20,7 @@ public class UberBlackSUV extends Car {
      this("Cadillac","XTS","Alex", duration, distance);
   }
 
+  // get fare price 
   public double getFare(){
     return 15.75 + (duration*0.89) + (distance*2.29);
   }

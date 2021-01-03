@@ -4,6 +4,7 @@ import java.util.*;
 
 public abstract class Car{
 
+  // instance variables 
   private String brand;
   private String model;    
   private String driver; 
@@ -14,7 +15,8 @@ public abstract class Car{
       this.model = model; 
       this.driver = driver; 
   }
-    
+  
+  // print out car info menu 
   public static void showInfo() {
     System.out.println("\nFind the right ride\n--------------------\n* UberX (1-3)\nAffordable, everyday rides\nFare Breakdown:\nBase Fare .................... $2.50\n+ Per Minute ................. $0.18\n+ Per Kilometer .............. $0.81");
 
@@ -28,6 +30,7 @@ public abstract class Car{
 
   }
 
+  // fare price depends on car choice
   public abstract double getFare();
   
 }

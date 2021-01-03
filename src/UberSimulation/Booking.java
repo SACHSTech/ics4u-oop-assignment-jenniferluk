@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Booking {
   
+  // instance variables
   private String username; 
   private int duration; 
   private int distance; 
@@ -26,6 +27,7 @@ public class Booking {
     this.driverrating = driverrating; 
   }
 
+  // print out booking 
   public String toString() {
     return "\nHere is your booking: \nName: " + this.username + "\nRide Duration: " + this.duration + "\nRide Distance: " + this.distance + "\n# of Passengers: " +this.passengernum + "\nFare: " + this.fare + "\nCar Choice: " + this.usercarChoice + "\nDriver: " + this.drivername + "\nDriver Phone #: " + this.driverphonenum + "\nDriver Rating: " + this.driverrating;
   }
