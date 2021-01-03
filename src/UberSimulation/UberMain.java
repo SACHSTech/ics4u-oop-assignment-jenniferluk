@@ -41,6 +41,9 @@ public class UberMain {
     String userphoneNum;
     String useremail;
     String userpassword;
+    String drivername = "";
+    String driverrating = ""; 
+    String driverphonenum = ""; 
     int TripDuration;
     int TripDistance;
     int passenger = 0;
@@ -101,38 +104,51 @@ public class UberMain {
 
     }
 
-    User user = new User(username, userphoneNum, useremail, userpassword, TripDistance, TripDuration, passenger,
-        carChoice);
-
-
     if (carChoice.equalsIgnoreCase("UberX")) {
       Car uberx = new UberX(TripDuration, TripDistance);
       uberx.getBrand(); 
       uberx.getFare();
       driver = new Driver("John");
+      drivername = driver.getName();
+      driverphonenum = driver.getphoneNum();
     } else if (carChoice.equalsIgnoreCase("UberComfort")) {
       Car ubercomfort = new UberComfort(TripDuration, TripDistance);
       ubercomfort.getBrand(); 
       ubercomfort.getFare();
       driver = new Driver("Sarah");
+      drivername = driver.getName();
+      driverphonenum = driver.getphoneNum();
+      driverrating = driver.getRating();
     } else if (carChoice.equalsIgnoreCase("UberXL")) {
       Car uberxl = new UberXL(TripDuration, TripDistance);
       uberxl.getBrand(); 
       uberxl.getFare();
       driver = new Driver("Amy");
+      drivername = driver.getName();
+      driverrating = driver.getRating();
+      driverphonenum = driver.getphoneNum();
     } else if (carChoice.equalsIgnoreCase("UberBlack")) {
       Car uberblack = new UberBlack(TripDuration, TripDistance);
       uberblack.getBrand();
       uberblack.getFare();
       driver = new Driver("Jess");
+      drivername = driver.getName();
+      driverphonenum = driver.getphoneNum();
+      driverrating = driver.getRating();
     } else if (carChoice.equalsIgnoreCase("UberBlackSUV")) {
       Car uberblacksuv = new UberBlackSUV(TripDuration, TripDistance);
       uberblacksuv.getBrand();
       uberblacksuv.getFare();
       driver = new Driver("Alex");
+      drivername = driver.getName(); 
+      driverphonenum = driver.getphoneNum();
+      driverrating = driver.getRating();
     }
 
-    
+
+    User user = new User(username, userphoneNum, useremail, userpassword);
+
+    Booking booking = new Booking(username, TripDistance, TripDuration, passenger, carChoice, drivername, driverphonenum, driverrating);
 
 
 
