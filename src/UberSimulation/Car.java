@@ -9,14 +9,22 @@ public abstract class Car{
   private String model;    
   private String driver; 
    
-    
+  /** 
+  * Car constructor. Creates an instance of the object, Car. 
+  *
+  * @param brand - string of the car's brand 
+  * @param model - string of the car's model 
+  * @param driver - string of the car's driver 
+  */
   public Car(String brand, String model, String driver){
       this.brand = brand;
       this.model = model; 
       this.driver = driver; 
   }
   
-  // print out car info menu 
+  /**
+  * void method with no return value. Used to print out the information of each car. 
+  */ 
   public static void showInfo() {
     System.out.println("\nFind the right ride\n--------------------\n* UberX (1-3)\nAffordable, everyday rides\nFare Breakdown:\nBase Fare .................... $2.50\n+ Per Minute ................. $0.18\n+ Per Kilometer .............. $0.81");
 
@@ -30,7 +38,9 @@ public abstract class Car{
 
   }
 
-  // fare price depends on car choice
+  /**
+  * Abstract getter method that returns the fare specific to the Uber car choice.
+  */
   public abstract double getFare();
   
 }

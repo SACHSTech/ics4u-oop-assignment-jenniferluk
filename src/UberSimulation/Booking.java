@@ -23,10 +23,10 @@ public class Booking {
   * @param distance - an integer that displays the distance of the ride 
   * @param passengernum - an integer that displays the number of passengers 
   * @param usercarChoice - a string that displays the user's car choice
-   * @param fare - a double that displays the cost of the ride
-   * @param drivername - a string that displays the name of the driver 
-   * @param driverphonenum - a string that displays the phone number of the driver 
-   * @param driverrating - a string that displays the driver's rating 
+  * @param fare - a double that displays the cost of the ride
+  * @param drivername - a string that displays the name of the driver 
+  * @param driverphonenum - a string that displays the phone number of the driver 
+  * @param driverrating - a string that displays the driver's rating 
   */
   public Booking(String username, int duration, int distance, int passengernum, String usercarChoice, double fare, String drivername, String driverphonenum, String driverrating) {
     this.username = username; 
