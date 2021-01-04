@@ -19,7 +19,7 @@ public class UberBlack extends Car {
   * @param duration - integer of the ride's duration. 
   * @param distance - integer of the ride's distance. 
   */
-  public UberBlack(String brand, String model, String driver, int duration, int distance){
+  public UberBlack(String brand, String model, String driver, int duration, int distance) {
     super(brand, model, driver); 
     this.duration = duration;
     this.distance = distance;

@@ -1,6 +1,7 @@
 package UberStimulation;
 
 import java.util.*;
+import UberSimulation.*;
 
 public abstract class Car{
 
@@ -17,9 +18,9 @@ public abstract class Car{
   * @param driver - string of the car's driver 
   */
   public Car(String brand, String model, String driver){
-      this.brand = brand;
-      this.model = model; 
-      this.driver = driver; 
+    this.brand = brand;
+    this.model = model; 
+    this.driver = driver; 
   }
   
   /**

@@ -1,6 +1,7 @@
 package UberStimulation;
 
 import java.util.*;
+import UberSimulation.*;
 import java.text.DecimalFormat;
 
 public class Booking {
