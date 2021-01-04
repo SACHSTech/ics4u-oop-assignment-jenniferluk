@@ -3,7 +3,6 @@ package UberSimulation;
 import java.io.*;
 import java.util.*;
 import java.util.Scanner;
-
 import UberStimulation.*;
 
 public class UberMain {
@@ -18,7 +17,6 @@ public class UberMain {
 
   // method to print out Uber logo
   public static void displayLogo() {
-
     System.out.println(
         "\n    ***    ***   *******    ********  ******* \n    ***    ***   ********   ********  ********\n    ***    ***   ***  ***   ***       ***  ****\n    ***    ***   ***  ***   ***       ***  ****\n    ***    ***   ********   ********  *********\n    ***    ***   *******    ********  ********\n    ***    ***   ***  ***   ***       ***  ****\n    ***    ***   ***  ***   ***       ***   ****\n     ********    ********   ********  ***    ****\n      ******     *******    ********  ***    ****");
 
@@ -65,7 +63,6 @@ public class UberMain {
     int passenger = 0;
     double fare = 0; 
     boolean menu = true;
-
     
     // initialize driver object 
     Driver driver = new Driver("");
@@ -296,8 +293,8 @@ public class UberMain {
                   }
                 }
             }
-            // end program once user finishes payment 
-            break;
+          // end program once user finishes payment 
+          break;
           
           // print out driver information if user enters D, loop continues 
           case "D" :
@@ -339,7 +336,6 @@ public class UberMain {
           pause(500);
           clearScreen();
           System.out.println(booking);
-
         }
       }
     }
