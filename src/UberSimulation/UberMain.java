@@ -116,7 +116,7 @@ public class UberMain {
 
           // print out car menu for 5 or less passengers 
           } else if (3 < passenger && passenger <= 5) {
-            System.out.println("Choose a ride: \n" + "UberXL\n" + "UberBlackSUV");
+            System.out.println("Choose a ride: \n * UberXL\n * UberBlackSUV");
           }
       
           System.out.println("\nFor more information about each car and its fare price, enter 'I'");
@@ -204,15 +204,13 @@ public class UberMain {
         
         switch (choice.toUpperCase()) {
 
-            
-          case "P" : 
-
-            // ends loop if user chooses to proceed with payment 
+          // ends loop if user chooses to proceed with payment  
+          case "P" :  
             end2 = false; 
             break;
+          
+          // print out driver information if user enters D, loop continues 
           case "D" :
-
-            // print out driver information 
             System.out.println();
             System.out.println(driver);
             break; 
@@ -223,12 +221,16 @@ public class UberMain {
             System.out.println("\nMake changes to your booking");
         }
       }
+
+      // create a loop for checkout menu
       end2 = true;
       while(end2){
         System.out.print("\nChoose a payment method by entering the first letter of each option: \n[Credit or Debit Card] [Gift Card]\n");
         choice = keyboard.readLine(); 
      
         switch (choice.toUpperCase()) {
+
+          // user chooses credit or debit option 
           case "C" :
             System.out.print("Card Number: ");
             CardNumber = keyboard.readLine(); 
@@ -236,9 +238,13 @@ public class UberMain {
             ExpDate = keyboard.readLine(); 
             System.out.print("CVV(123): "); 
             CVV = Integer.parseInt(keyboard.readLine());
+
+            // use getter method to get booking fare price 
             System.out.print("Your total: $"+ booking.getFare() + "\nTo confirm your booking please enter your password: ");
             userpassword = keyboard.readLine(); 
-            if (userpassword.equals(user.getpassword())){
+
+            // if statement to check if users inputted password matches previous password
+            if (userpassword.equals(user.getPassword())){
               System.out.println("Your booking has been confirmed. Thank you for riding with Uber. Your driver will contact you shortly.");
               end2 = false; 
               end1 = false; 
@@ -247,9 +253,12 @@ public class UberMain {
               System.out.println("Incorrect password. Please try again.");
             }
           
+          // user chooses gift card option 
           case "G" :
             System.out.println("Gift Code: ");
             giftcode = keyboard.readLine(); 
+
+            // if statement to check if user inputs correct code 
             if (giftcode.equalsIgnoreCase("TOPSECRET")){
               System.out.println("Congratulations! You receive this ride for free! Thank you for riding with Uber. Your driver will contact you shortly.");
               end2 = false; 

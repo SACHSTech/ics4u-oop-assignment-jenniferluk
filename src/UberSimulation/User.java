@@ -25,7 +25,7 @@ public class User{
     this.userpassword = userpassword;      
   }
 
-  public String getpassword(){
+  public String getPassword(){
     return userpassword;
   }
 }
