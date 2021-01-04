@@ -1,6 +1,7 @@
 package UberStimulation;
 
 import java.util.*;
+import java.text.DecimalFormat;
 
 public class Booking {
   
@@ -13,7 +14,8 @@ public class Booking {
   private String drivername; 
   private String driverphonenum; 
   private String driverrating; 
-  private double fare;
+  private String fare;
+  DecimalFormat df = new DecimalFormat("###.##");
 
   /** 
   * Booking constructor. Creates an instance of the object, Booking. 
@@ -34,7 +36,9 @@ public class Booking {
     this.distance = distance; 
     this.passengernum = passengernum;
     this.usercarChoice = usercarChoice; 
-    this.fare = fare; 
+
+    // round fare to 2 decimal place
+    this.fare = df.format(fare); 
     this.drivername = drivername; 
     this.driverphonenum = driverphonenum; 
     this.driverrating = driverrating; 
@@ -54,6 +58,15 @@ public class Booking {
   * @return this.driverrating - a string that displays the driver's rating  
   */ 
   public String toString() {
-    return "\nHere is your booking: \nName: " + this.username + "\nRide Duration: " + this.duration + "\nRide Distance: " + this.distance + "\n# of Passengers: " +this.passengernum + "\nFare: " + this.fare + "\nCar Choice: " + this.usercarChoice + "\nDriver: " + this.drivername + "\nDriver Phone #: " + this.driverphonenum + "\nDriver Rating: " + this.driverrating;
+    return "\nHere is your booking: \nName: " + this.username + "\nRide Duration: " + this.duration + " mins\nRide Distance: " + this.distance + "km\n# of Passengers: " +this.passengernum + "\nFare: $" + this.fare + "\nCar Choice: " + this.usercarChoice + "\nDriver: " + this.drivername + "\nDriver Phone #: " + this.driverphonenum + "\nDriver Rating: " + this.driverrating;
+  }
+
+  /** 
+  * Getter method that returns the fare 
+  * 
+  * @return this.fare
+  */
+  public String getFare(){
+    return this.fare;
   }
 }

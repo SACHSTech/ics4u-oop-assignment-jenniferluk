@@ -48,6 +48,10 @@ public class UberMain {
     String driverrating = ""; 
     String driverphonenum = ""; 
     String choice; 
+    String CardNumber; 
+    String ExpDate;
+    String giftcode;
+    int CVV; 
     int TripDuration;
     int TripDistance;
     int passenger = 0;
@@ -195,31 +199,67 @@ public class UberMain {
       end2 = true;
       while (end2) {
         
-        System.out.println("\nTo confirm your booking enter 'Y'\nFor more information about your driver enter 'D'\nTo make changes to your booking enter 'C'"); 
+        System.out.println("\nTo proceed with payment enter 'P'\nFor more information about your driver enter 'D'\nTo make changes to your booking enter 'C'"); 
         choice = keyboard.readLine();
         
         switch (choice.toUpperCase()) {
 
-          // end program once user confirms 
-          case "Y":
-            System.out.print("Thank you for riding with Uber! Your driver will contact you shortly.");
-            end1 = false; 
+            
+          case "P" : 
+
+            // ends loop if user chooses to proceed with payment 
             end2 = false; 
             break;
-          case "D":
+          case "D" :
 
             // print out driver information 
+            System.out.println();
             System.out.println(driver);
             break; 
           
           // end confirmation menu loop but loop back to user input fields to correct booking 
-          case "C":
+          case "C" :
             end2 = false;
             System.out.println("\nMake changes to your booking");
         }
       }
+      end2 = true;
+      while(end2){
+        System.out.print("\nChoose a payment method by entering the first letter of each option: \n[Credit or Debit Card] [Gift Card]\n");
+        choice = keyboard.readLine(); 
+     
+        switch (choice.toUpperCase()) {
+          case "C" :
+            System.out.print("Card Number: ");
+            CardNumber = keyboard.readLine(); 
+            System.out.print("Expiry Date (MM/YY): "); 
+            ExpDate = keyboard.readLine(); 
+            System.out.print("CVV(123): "); 
+            CVV = Integer.parseInt(keyboard.readLine());
+            System.out.print("Your total: $"+ booking.getFare() + "\nTo confirm your booking please enter your password: ");
+            userpassword = keyboard.readLine(); 
+            if (userpassword.equals(user.getpassword())){
+              System.out.println("Your booking has been confirmed. Thank you for riding with Uber. Your driver will contact you shortly.");
+              end2 = false; 
+              end1 = false; 
+              break; 
+            } else {
+              System.out.println("Incorrect password. Please try again.");
+            }
+          
+          case "G" :
+            System.out.println("Gift Code: ");
+            giftcode = keyboard.readLine(); 
+            if (giftcode.equalsIgnoreCase("TOPSECRET")){
+              System.out.println("Congratulations! You receive this ride for free! Thank you for riding with Uber. Your driver will contact you shortly.");
+              end2 = false; 
+              end1 = false; 
+              break;
+            } else {
+              System.out.println("Incorrect gift code. Please try again.");
+            }
+          }
+        }
     }
-
   }
-
 }
