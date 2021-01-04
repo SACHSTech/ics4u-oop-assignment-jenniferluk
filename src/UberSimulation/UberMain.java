@@ -55,7 +55,8 @@ public class UberMain {
     String driverrating = ""; 
     String driverphonenum = ""; 
     String choice; 
-    String CardNumber; 
+    String choice2; 
+    int CardNumber; 
     String ExpDate;
     String giftcode;
     int CVV; 
@@ -226,13 +227,13 @@ public class UberMain {
 
       // clear screen to confirmation page 
       clearScreen(); 
-
+      
+      // print out user's booking info
+      System.out.println(booking);
+      
       // create loop for confirmation menu 
       end2 = true;
-      while (end2) {
-        // print out user's booking info
-        System.out.println(booking);
-        
+      while (end2) {  
         System.out.println("\nTo proceed with payment enter 'P'\nFor more information about your driver enter 'D'\nTo make changes to your booking enter 'C'"); 
         choice = keyboard.readLine();
         
@@ -245,7 +246,10 @@ public class UberMain {
             // create a loop for checkout menu
             end2 = true;
             while (end2) {
-              System.out.print("\nChoose a payment method by entering the first letter of each option: \n[Credit or Debit Card] [Gift Card]\n");
+              clearScreen();
+              System.out.println("PAYMENT");
+              printDivider();
+              System.out.print("Choose a payment method by entering the first letter of each option: \n[Credit or Debit Card] [Gift Card]\n");
               choice = keyboard.readLine(); 
           
               switch (choice.toUpperCase()) {
@@ -253,7 +257,7 @@ public class UberMain {
                 // user chooses credit or debit option 
                 case "C" :
                   System.out.print("Card Number: ");
-                  CardNumber = keyboard.readLine(); 
+                  CardNumber = Integer.parseInt(keyboard.readLine()); 
                   System.out.print("Expiry Date (MM/YY): "); 
                   ExpDate = keyboard.readLine(); 
                   System.out.print("CVV(123): "); 
@@ -271,11 +275,13 @@ public class UberMain {
                     break; 
                   } else {
                     System.out.println("Incorrect password. Please try again.");
+                    pause(500);
+                    break;
                   }
                 
                 // user chooses gift card option 
                 case "G" :
-                  System.out.println("Gift Code: ");
+                  System.out.print("Gift Code: ");
                   giftcode = keyboard.readLine(); 
 
                   // if statement to check if user inputs correct code 
@@ -286,6 +292,7 @@ public class UberMain {
                     break;
                   } else {
                     System.out.println("Incorrect gift code. Please try again.");
+                    pause(500);
                   }
                 }
             }
@@ -295,27 +302,35 @@ public class UberMain {
           // print out driver information if user enters D, loop continues 
           case "D" :
             clearScreen();
+            System.out.println("YOUR DRIVER");
+            printDivider();
             System.out.println(driver);
             System.out.println("\nEnter 'X' to exit menu.");
-          
-            // createa while loop to keep the driver info menu open 
+
+            menu = true;
+            // create a while loop to keep the driver info menu open 
             while (menu){
 
               // continue reading line as long as menu is opened
-              choice = keyboard.readLine();
+              choice2 = keyboard.readLine();
 
               // if statement to see if user closes menu 
-              if (choice.equalsIgnoreCase("X")){
+              if (choice2.equalsIgnoreCase("X")){
                 clearScreen();
                 menu = false;
+                System.out.println(booking);
+                break;
+              } else {
+                System.out.println("Invalid input. Please try again.");
               }
             }
           break;
-
+          
           // end confirmation menu loop but loop back to user input fields to correct booking 
           case "C" :
             clearScreen();
-            System.out.println("Make changes to your booking");
+            System.out.println("ADJUST YOUR BOOKING");
+            printDivider();
             end2 = false;    
             break;
 
@@ -323,6 +338,7 @@ public class UberMain {
           System.out.println("Invalid input, try again");
           pause(500);
           clearScreen();
+          System.out.println(booking);
 
         }
       }
