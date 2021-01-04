@@ -25,7 +25,12 @@ public class User{
     this.useremail = useremail; 
     this.userpassword = userpassword;      
   }
-
+  
+  /** 
+  * Gettor method that returns user's password. 
+  *
+  * @return the user's password.
+  */
   public String getPassword(){
     return userpassword;
   }
