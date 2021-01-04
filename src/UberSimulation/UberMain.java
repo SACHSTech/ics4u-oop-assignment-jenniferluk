@@ -25,6 +25,11 @@ public class UberMain {
     // use pause method
     pause(1500);
   }
+
+  public static void clearScreen() {  
+    System.out.print("\033[H\033[2J");  
+    System.out.flush();  
+  }  
   
   // method to pause console
   private static void pause(int pauseLength) {
@@ -58,6 +63,8 @@ public class UberMain {
     int TripDistance;
     int passenger = 0;
     double fare = 0; 
+    boolean menu = true;
+
     
     // initialize driver object 
     Driver driver = new Driver("");
@@ -81,6 +88,14 @@ public class UberMain {
 
     System.out.print("Enter a password: ");
     userpassword = keyboard.readLine();
+
+    System.out.println("Processing your information...");
+    pause(500);
+
+    // clear screen to booking page
+    clearScreen();
+    System.out.println("Request a ride, hop in, and relax.");
+    printDivider();
 
     // create while loop for booking changes 
     boolean end1 = true; 
@@ -113,7 +128,7 @@ public class UberMain {
 
         // print out car menu for 3 or less passengers
         if (passenger <= 3) {
-          System.out.println("\nChoose a ride: \n * UberX\n * UberComfort\n * UberXL\n * UberBlack\n * UberBlackSUV");
+          System.out.println("Choose a ride: \n * UberX\n * UberComfort\n * UberXL\n * UberBlack\n * UberBlackSUV");
 
         // print out car menu for 5 or less passengers 
         } else if (3 < passenger && passenger <= 5) {
@@ -170,29 +185,53 @@ public class UberMain {
         
         // input to call method from car class 
         } else if (carChoice.equalsIgnoreCase("I")) {
+          clearScreen();
           Car.showInfo();
+          System.out.println("\nEnter 'X' to exit menu.");
+          
+          // createa while loop to keep the fare menu open 
+          while (menu){
+
+            // continue reading line as long as menu is opened
+            choice = keyboard.readLine();
+
+            // if statement to see if user closes menu 
+            if (choice.equalsIgnoreCase("X")){
+              clearScreen();
+              menu = false;
+
+            } else {
+              System.out.println("Invalid input. Please try again.");
+            }
+          }
 
         // an invalid input will keep the car menu looping 
         } else {
-          System.out.println("Invalid input. Please try again.");
+          System.out.println("Invalid input. Please try again.\n");
+          pause(500);
         }
       }
       
+      // reset variable 
+      choice = ""; 
+
       System.out.println("Searching for a ride...");
       pause(1000);
-
+      
       // create object for user 
       User user = new User(username, userphoneNum, useremail, userpassword);
 
       // pass user and driver info into booking class 
       Booking booking = new Booking(username, TripDistance, TripDuration, passenger, carChoice, fare, drivername, driverphonenum, driverrating);
 
-      // print out user's booking info
-      System.out.println(booking);
+      // clear screen to confirmation page 
+      clearScreen(); 
 
       // create loop for confirmation menu 
       end2 = true;
       while (end2) {
+        // print out user's booking info
+        System.out.println(booking);
         
         System.out.println("\nTo proceed with payment enter 'P'\nFor more information about your driver enter 'D'\nTo make changes to your booking enter 'C'"); 
         choice = keyboard.readLine();
@@ -255,14 +294,36 @@ public class UberMain {
           
           // print out driver information if user enters D, loop continues 
           case "D" :
-            System.out.println();
+            clearScreen();
             System.out.println(driver);
-            break; 
+            System.out.println("\nEnter 'X' to exit menu.");
+          
+            // createa while loop to keep the driver info menu open 
+            while (menu){
+
+              // continue reading line as long as menu is opened
+              choice = keyboard.readLine();
+
+              // if statement to see if user closes menu 
+              if (choice.equalsIgnoreCase("X")){
+                clearScreen();
+                menu = false;
+              }
+            }
+          break;
 
           // end confirmation menu loop but loop back to user input fields to correct booking 
           case "C" :
-            System.out.println("\nMake changes to your booking");
+            clearScreen();
+            System.out.println("Make changes to your booking");
             end2 = false;    
+            break;
+
+          default :
+          System.out.println("Invalid input, try again");
+          pause(500);
+          clearScreen();
+
         }
       }
     }
