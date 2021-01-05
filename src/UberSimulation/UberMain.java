@@ -54,7 +54,7 @@ public class UberMain {
     String driverphonenum = ""; 
     String choice; 
     String choice2; 
-    int CardNumber; 
+    String CardNumber; 
     String ExpDate;
     String giftcode;
     int CVV; 
@@ -187,8 +187,8 @@ public class UberMain {
           Car.showInfo();
           System.out.println("\nEnter 'X' to exit menu.");
           
-          // createa while loop to keep the fare menu open 
-          while (menu){
+          // create a while loop to keep the fare menu open 
+          while (menu) {
 
             // continue reading line as long as menu is opened
             choice = keyboard.readLine();
@@ -253,8 +253,8 @@ public class UberMain {
 
                 // user chooses credit or debit option 
                 case "C" :
-                  System.out.print("Card Number: ");
-                  CardNumber = Integer.parseInt(keyboard.readLine()); 
+                  System.out.print("Card Number(XXXX XXXX XXXX XXXX): ");
+                  CardNumber = keyboard.readLine(); 
                   System.out.print("Expiry Date (MM/YY): "); 
                   ExpDate = keyboard.readLine(); 
                   System.out.print("CVV(123): "); 

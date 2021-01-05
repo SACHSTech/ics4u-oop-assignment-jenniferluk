@@ -8,13 +8,13 @@ public class Booking {
   
   // instance variables
   private String username; 
+  private String drivername; 
+  private String driverphonenum; 
+  private String driverrating; 
   private int duration; 
   private int distance; 
   private int passengernum; 
   private String usercarChoice;
-  private String drivername; 
-  private String driverphonenum; 
-  private String driverrating; 
   private String fare;
   DecimalFormat df = new DecimalFormat("###.##");
 
