@@ -5,7 +5,7 @@
 <img src="https://github.com/SACHSTech/ics4u-oop-assignment-jenniferluk/blob/main/src/Class%20Diagram.png?raw=true"> 
 
 ## Summary
-The system that is being model is the Uber ride service system that stimulates the booking process of an Uber ride. The program is made using seven objects which are Booking, Driver, User, and the 5 Uber car options, UberX, UberXL, UberComfort, UberBlack, and UberBlackSUV, which inherits the car object. 
+The system that is being modeled is the Uber ride service system that stimulates the booking process of an Uber ride. The program is made using seven objects which are Booking, Driver, User, and the 5 Uber car options, UberX, UberXL, UberComfort, UberBlack, and UberBlackSUV, which inherits the car object. 
 
 The main object is the Booking object which stores the User, Car, and Driver information. Whenever a user creates an account and chooses their car choice, a driver will be assigned to their car and the parameters passed through the User and Driver object will be passed through the Booking class as well. Therefore, this ia a has-a relationship or aggregation. 
 
