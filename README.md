@@ -2,7 +2,7 @@
 # ICS4U OOP Assignment
 
 ## Class Diagram
-![Photo](https://repl.it/@JenniferLuk/ics4u-oop-assignment-jenniferluk#Class Diagram.png)  
+![Photo](https://repl.it/@JenniferLuk/ics4u-oop-assignment-jenniferluk#Class%20Diagram.png)  
 
 ## Summary
 The system that is being model is the Uber ride service system that stimulates the booking process of an Uber ride. The program is made using seven objects which are Booking, Driver, User, and the 5 Uber car options, UberX, UberXL, UberComfort, UberBlack, and UberBlackSUV, which inherits the car object. 
