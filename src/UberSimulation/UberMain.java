@@ -96,7 +96,7 @@ public class UberMain {
     printDivider();
 
     // create while loop for booking changes 
-    boolean end1 = true; 
+    boolean end1 = true;  
     while (end1) {
       System.out.print("Enter the duration of your trip in mins: ");
       TripDuration = Integer.parseInt(keyboard.readLine());
@@ -200,6 +200,7 @@ public class UberMain {
 
             } else {
               System.out.println("Invalid input. Please try again.");
+              menu= true;
             }
           }
 
@@ -220,7 +221,7 @@ public class UberMain {
       User user = new User(username, userphoneNum, useremail, userpassword);
 
       // pass user and driver info into booking class 
-      Booking booking = new Booking(username, TripDistance, TripDuration, passenger, carChoice, fare, drivername, driverphonenum, driverrating);
+      Booking booking = new Booking(username, TripDuration, TripDistance, passenger, carChoice, fare, drivername, driverphonenum, driverrating);
 
       // clear screen to confirmation page 
       clearScreen(); 
@@ -339,5 +340,10 @@ public class UberMain {
         }
       }
     }
+  pause(2000);
+  clearScreen();
+  displayLogo();
+  pause(1000);
+  clearScreen();
   }
 }

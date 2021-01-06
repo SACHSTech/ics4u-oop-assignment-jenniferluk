@@ -59,7 +59,7 @@ public class Booking {
   * @return this.driverrating - a string that displays the driver's rating  
   */ 
   public String toString() {
-    return "Here is your booking: \nName: " + this.username + "\nRide Duration: " + this.duration + " mins\nRide Distance: " + this.distance + "km\n# of Passengers: " +this.passengernum + "\nFare: $" + this.fare + "\nCar Choice: " + this.usercarChoice + "\nDriver: " + this.drivername + "\nDriver Phone #: " + this.driverphonenum + "\nDriver Rating: " + this.driverrating;
+    return "Here is your booking: \nName: " + this.username + "\nRide Duration: " + this.duration + " mins\nRide Distance: " + this.distance + " km\n# of Passengers: " +this.passengernum + "\nFare: $" + this.fare + "\nCar Choice: " + this.usercarChoice + "\nDriver: " + this.drivername + "\nDriver Phone #: " + this.driverphonenum + "\nDriver Rating: " + this.driverrating;
   }
 
   /** 
