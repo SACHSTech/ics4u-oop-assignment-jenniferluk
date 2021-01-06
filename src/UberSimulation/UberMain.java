@@ -340,7 +340,7 @@ public class UberMain {
         }
       }
     }
-  pause(2000);
+  pause(2500);
   clearScreen();
   displayLogo();
   pause(1000);
