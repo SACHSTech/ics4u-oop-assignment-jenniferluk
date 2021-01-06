@@ -344,6 +344,5 @@ public class UberMain {
   clearScreen();
   displayLogo();
   pause(1000);
-  clearScreen();
   }
 }

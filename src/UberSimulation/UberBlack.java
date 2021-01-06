@@ -43,5 +43,4 @@ public class UberBlack extends Car {
   public double getFare(){
     return 8.75 + (duration*0.85) + (distance*2.23);
   }
-
 }

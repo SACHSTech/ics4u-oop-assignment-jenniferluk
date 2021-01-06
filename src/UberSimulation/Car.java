@@ -42,6 +42,5 @@ public abstract class Car{
   /**
   * Abstract getter method that returns the fare specific to the Uber car choice.
   */
-  public abstract double getFare();
-  
+  public abstract double getFare();  
 }

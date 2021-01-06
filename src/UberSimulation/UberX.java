@@ -42,5 +42,4 @@ public class UberX extends Car {
   public double getFare(){
     return 2.50 + (duration*0.18) + (distance*0.81);
   }
-
 }

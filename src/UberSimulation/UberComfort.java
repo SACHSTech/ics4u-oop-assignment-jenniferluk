@@ -43,5 +43,4 @@ public class UberComfort extends Car {
   public double getFare(){
     return 3.75 + (duration*0.26) + (distance*0.93);
   }
-
 }

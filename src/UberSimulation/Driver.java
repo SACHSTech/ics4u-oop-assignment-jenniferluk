@@ -97,5 +97,4 @@ public class Driver{
     return "Driver Name: " + this.name + "\nPhone #: " + this.phoneNum + "\nEmail: " + this.email + "\nRating: " +this.rating + "\nCar: " + this.car;
    
   }
- 
 }
